@@ -29,19 +29,9 @@
     <header class="formulario">
         <div class="form-container">
             <div class="form-itens">
-                    <form action="cadrastro.php" method="get">
-                        <fieldset><legend>Preencha com seus Dados</legend>
-                            <p>Nome completo: <input type="text" name="Nome" id="idNome" size="20" maxlength="30" placeholder=Nome> </p> 
-                            <p>CPF <input type="number" name="cpf" id="idCpf" size="11" maxlength="11" > </p> 
-                            <p>Telefone <input type="tel" name="telefone" id="idTel" size="15" maxlength="15"></p> 
-                            <p>Email <input type="email" name="email" id="idEmail"> </p>
-                            <p>Cep <input type="number" name="cep" id="idCep"> </p>
-                            <p>Logradouro <input type="text" name="logradouro" id="idLogradouro"></p>
-                            <p>Bairro <input type="text" name="bairro" id="idBairro"></p>
-                            <p>Cidade <input type="text" name="cidade" id="idCidade"></p>
-                            <p>Estado</p>
-                        </fieldset>
-                    </form>
+                    <php 
+                        
+                    ?>
                 </div>
         </div>
     </header>

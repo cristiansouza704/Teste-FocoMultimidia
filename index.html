@@ -29,7 +29,7 @@
     </nav>
     <header class="formulario" id="idFormulario">
         <div class="form-container">
-                <form action="cadrastro.php" method="get" class="form-item" >
+                <form method="get" class="form-item" id="form-item" >
                     <fieldset >
                         <legend>Preencha com seus Dados</legend>
                             <br><br>
@@ -87,8 +87,8 @@
                                 <small>Erro</small>
                             </div>
                             <br>
-                            <input class="botao" type="submit" value="Enviar">
                             
+                            <button class="botao" type="submit" onclick="verificar()" >ENVIAR</button>
                     </fieldset>
                 </form> 
         </div>

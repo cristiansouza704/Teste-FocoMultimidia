@@ -28,23 +28,88 @@
     </nav>
     <header class="formulario">
         <div class="form-container">
-            <div class="form-itens">
-                    <form action="cadrastro.php" method="get">
-                        <fieldset><legend>Preencha com seus Dados</legend>
-                            <p>Nome completo: <input type="text" name="Nome" id="idNome" size="20" maxlength="30" placeholder=Nome> </p> 
-                            <p>CPF <input type="number" name="cpf" id="idCpf" size="11" maxlength="11" > </p> 
-                            <p>Telefone <input type="tel" name="telefone" id="idTel" size="15" maxlength="15"></p> 
-                            <p>Email <input type="email" name="email" id="idEmail"> </p>
-                            <p>Cep <input type="number" name="cep" id="idCep"> </p>
-                            <p>Logradouro <input type="text" name="logradouro" id="idLogradouro"></p>
-                            <p>Bairro <input type="text" name="bairro" id="idBairro"></p>
-                            <p>Cidade <input type="text" name="cidade" id="idCidade"></p>
-                            <p>Estado</p>
-                        </fieldset>
-                    </form>
-                </div>
+                <form action="cadrastro.php" method="get" class="form-item" >
+                    <fieldset >
+                        <legend>Preencha com seus Dados</legend>
+                            <br><br>
+                            <div class="itens success">                               
+                                <input type="text" name="Nome" id="idNome" size="20" maxlength="30"> 
+                                <label for="idNome">Nome completo:</label> 
+                                <i class="fas fa-check success"></i>
+                                <i class="fas fa-times error"></i>
+                                <small>Erro</small>
+                            </div>    
+                            <br>                     
+                            <div class="itens error">
+                                <input type="number" name="cpf" id="idCpf" size="11" maxlength="11" >
+                                <label for="idCpf">CPF</label>
+                                <i class="fas fa-check success"></i>
+                                <i class="fas fa-times error"></i>
+                                <small>Mensagem de Erro</small>
+                            </div>
+                            <br>
+                            <div class="itens">
+                                <input type="tel" name="telefone" id="idTel" size="15" maxlength="15">  
+                                <label for="idTel">Telefone</label>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                                <small>Erro</small>
+                            </div> 
+                            <br>
+                            <div class="itens "> 
+                                <input type="email" name="email" id="idEmail">
+                                <label for="idEmail">Email</label>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                                <small>Erro</small>
+                            </div>
+                            <br>
+                            <div class="itens">
+                                <input type="number" name="cep" id="idCep">
+                                <label for="idCep">Cep </label>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                                <small>Erro</small>
+                            </div>
+                            <br>
+                            <div class="itens">
+                                <input type="text" name="logradouro" id="idLogradouro">
+                                <label for="idLogradouro">Logradouro </label>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                                <small>Erro</small>
+                            </div>
+                            <br>
+                            <div class="itens">
+                                <input type="text" name="bairro" id="idBairro">
+                                <label for="idBairro">Bairro</label>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                                <small>Erro</small>
+                            </div>
+                            <br>
+                            <div class="itens">
+                                <input type="text" name="cidade" id="idCidade">
+                                <label for="idCidade">Cidade </label>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                                <small>Erro</small>
+                            </div>
+                            <br>
+                            <div class="itens">
+                                <input type="text" name="estado" id="idEstado">
+                                <label for="idEstado">Estado</label>
+                                <i class="fas fa-check"></i>
+                                <i class="fas fa-times"></i>
+                                <small>Erro</small>
+                            </div>
+                            <br>
+                            <input type="button" value="Enviar" class="botao">
+                    </fieldset>
+                </form> 
         </div>
     </header>
+    
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-item">

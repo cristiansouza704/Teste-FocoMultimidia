@@ -6,8 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste FocoMultimidia</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="js/navbar.js">
-    <link rel="stylesheet" href="js/validação.js">
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="jquery/additional-methods.js"></script>
+    <script type="text/javascript" src="jquery/jquery.validate.js"></script>
+    <script src="jquery/localization/messages_pt_BR.min.js"></script>
+    
+    <script type="text/javascript">  
+        $(document).ready(function(){
+            $('#idForm').validate({
+                rules:{
+                    Nome:{
+                        required:true,
+                        minlength:5
+                        
+                    },
+                    cpf:{
+                        required:true,
+                        minlength:11,
+                        cpfbr:true,
+                        
+                    },
+                    telefone:{
+                        required:true,
+                        minlength:11
+                    },
+                    email:{
+                        required:true,
+                        email: true
+                    },
+                    cep:{
+                        required:true,
+                        minlength:8,
+                        postalcodeBR: true,
+                        
+                    },
+                    logradouro:{
+                        required:true,
+                        minlength:5
+                    },
+                    bairro:{
+                        required:true,
+                        minlength:4
+                    },
+                    cidade:{
+                        required:true,
+                        minlength:5
+                    },
+                    estado:{
+                        required:true,
+                        minlength:5
+                    },
+                },
+                message:{
+                    Nome:{
+                        required: "Este campo é obrigatorio",
+                        minlength:"Mininmo 5 Caracteres"
+                        
+                    },
+                    cpf:{
+                        required:"Este campo é obrigatorio",
+                        minlength:"Mininmo 11 Caracteres"
+                    }
+                },
+            
+            });
+         
+        });
+
+    </script>
+
+    <link rel="stylesheet" href="jquery/validar.js">
+
+
 </head>
 <body>
     <nav id="navbar">
@@ -29,19 +99,19 @@
     </nav>
     <header class="formulario" id="idFormulario">
         <div class="form-container">
-                <form method="get" class="form-item" id="form-item" >
+                <form method="get" class="form-item" id="idForm" >
                     <fieldset >
                         <legend>Preencha com seus Dados</legend>
                             <br><br>
-                            <div class="itens" >                               
-                                <input type="text" name="Nome" id="idNome" size="20" maxlength="30"> 
-                                <label for="idNome">Nome completo:</label> 
-                                <small>Erro</small>
+                            <div class="itens " >                               
+                                <input type="text" name="Nome" class="cNome succes " id="idNome" size="20" maxlength="30"> 
+                                <label id="lNome" for="idNome">Nome completo:</label> 
+                                <small id="smallNome">Erro</small>
                             </div>    
                             <br>                     
                             <div class="itens">
                                 <input type="number" name="cpf" id="idCpf" size="11" maxlength="11" >
-                                <label for="idCpf">CPF</label>
+                                <label id="lCpf" for="idCpf">CPF</label>
                                 <small>Mensagem de Erro</small>
                             </div>
                             <br>
@@ -59,7 +129,7 @@
                             <br>
                             <div class="itens">
                                 <input type="number" name="cep" id="idCep">
-                                <label for="idCep">Cep </label>
+                                <label id="lCep" for="idCep">Cep </label>
                                 <small>Erro</small>
                             </div>
                             <br>
@@ -87,9 +157,9 @@
                                 <small>Erro</small>
                             </div>
                             <br>
-                            
-                            <button class="botao" type="submit" onclick="verificar()" >ENVIAR</button>
-                    </fieldset>
+
+                            <input class="botao" type="button" value="Enviar">
+                    </fieldset> 
                 </form> 
         </div>
     </header>

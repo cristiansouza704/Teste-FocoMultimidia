@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste FocoMultimidia</title>
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
 
-    <!-- Validação Fomularios -->
+    
+
+
+    <!-- Validação Fomularios
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
     <script type="text/javascript" src="jquery/additional-methods.js"></script>
     <script type="text/javascript" src="jquery/jquery.validate.js"></script>
     <script src="jquery/localization/messages_pt_BR.min.js"></script>
-    <script src="jquery/validacao.js"></script>
+    <script src="jquery/validacao.js"></script> -->
 
     <!-- Preenchimento CEP com Viacep -->
     <script type="text/javascript" src="js/cep.js"></script>
@@ -31,12 +34,12 @@
     </nav>
     <header class="formulario" id="idFormulario">
         <div class="form-container">
-                <form method="POST" class="form-item" id="idForm" >
+                <form action="#" method="Post" class="form-item" id="idForm" >
                     <fieldset >
                         <legend>Preencha com seus Dados</legend>
                             <br><br>
                             <div class="itens " >                               
-                                <input type="text" name="Nome" class="cNome succes " id="idNome" size="20" maxlength="30"> 
+                                <input type="text" name="Nome" class="cNome" id="idNome" size="20" maxlength="30"> 
                                 <label id="lNome" for="idNome">Nome completo:</label> 
                             </div>    
                             <br>                     
@@ -47,37 +50,37 @@
                             <br>
                             <div class="itens">
                                 <input type="tel" name="telefone" id="idTel" size="15" maxlength="15">  
-                                <label for="idTel">Telefone</label>
+                                <label  id="lTel" for="idTel">Telefone</label>
                             </div> 
                             <br>
                             <div class="itens "> 
                                 <input type="email" name="email" id="idEmail">
-                                <label for="idEmail">Email</label>
+                                <label id="lEmail" for="idEmail">Email</label>
                             </div>
                             <br>
                             <div class="itens">
-                                <input type="text" name="cep" id="cep" onblur="pesquisacep(this.value);">
+                                <input type="text" name="cep" id="idCep" onblur="pesquisacep(this.value);">
                                 <label id="lCep" for="idCep">Cep </label>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="text" name="logradouro" id="idLogradouro">
-                                <label for="idLogradouro">Logradouro </label>
+                                <label id="lLogradouro"  for="idLogradouro">Logradouro </label>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="text" name="bairro" id="idBairro">
-                                <label for="idBairro">Bairro</label>
+                                <label id="lBairro" for="idBairro">Bairro</label>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="text" name="cidade" id="idCidade">
-                                <label for="idCidade">Cidade </label>
+                                <label id="lCidade" for="idCidade">Cidade </label>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="text" name="estado" id="idEstado">
-                                <label for="idEstado">Estado</label>
+                                <label id="lEstado" for="idEstado">Estado</label>
                             </div>
                             <br>
 
@@ -98,8 +101,7 @@
     
     
     
-    <!-- icones Awesome -->
-    <script src="https://kit.fontawesome.com/c4354d0f7e.js" crossorigin="anonymous"></script>
-
+    <!-- Validação -->
+    <script type="text/javascript"  src="js/validar.js"></script>
 </body>
 </html>

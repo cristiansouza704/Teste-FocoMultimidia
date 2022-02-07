@@ -36,6 +36,10 @@ let estado = document.querySelector("#idEstado");
 let labelEstado = document.querySelector("#lEstado");
 let valEstado = false;
 
+let botaoEnviar = document.querySelector(".botao")
+let botaoSucesso = document.querySelector(".botaosucesso")
+let botaoReenviar = document.querySelector(".botaoerro")
+
 console.log(telefone);
 
     nome.addEventListener('keyup', function () {
@@ -43,11 +47,13 @@ console.log(telefone);
             inputNome.setAttribute('style', 'border:1px solid red');
             labelNome.setAttribute('style', 'color: red', );
             labelNome.innerHTML = 'Insira No Minimo 5 Caracteres'
+            valNome = false;
         
         } else {
             inputNome.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelNome.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelNome.innerHTML = 'Nome Ok!'
+            valNome = true;
         }
     })
 
@@ -56,10 +62,12 @@ console.log(telefone);
             inputCpf.setAttribute('style', 'border:1px solid red');
             labelCpf.setAttribute('style', 'color: red', );
             labelCpf.innerHTML = 'Insira o CPF corretamente'
+            valCpf = false;
         } else {
             inputCpf.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelCpf.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelCpf.innerHTML = 'CPF ok!'
+            valCpf = true;
         }
     })
     telefone.addEventListener('keyup', function () {
@@ -67,10 +75,12 @@ console.log(telefone);
             telefone.setAttribute('style', 'border:1px solid red');
             labelTel.setAttribute('style', 'color: red', );
             labelTel.innerHTML = 'Insira o numero de Telefone corretamente'
+            valTelefone = false
         } else {
             telefone.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelTel.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelTel.innerHTML = 'Telefone Ok!'
+            valTelefone = true;
         }
     })
     email.addEventListener('keyup', function () {
@@ -79,30 +89,25 @@ console.log(telefone);
             email.setAttribute('style', 'border:1px solid red');
             labelEmail.setAttribute('style', 'color: red', );
             labelEmail.innerHTML = 'Insira o email corretamente'
+            valEmail = false;
         } else {
             email.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelEmail.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelEmail.innerHTML = 'Email Ok!'
+            valEmail = true;
         }
-        function checarEmail(){
-            if( document.forms[0].email.value=="" 
-               || document.forms[0].email.value.indexOf('@')==-1 
-                 || document.forms[0].email.value.indexOf('.')==-1 )
-                {
-                  alert( "Por favor, informe um E-MAIL válido!" );
-                  return false;
-                }
-            }
     })
     cep.addEventListener('keyup', function () {
         if (cep.value.length < 8 || cep.value.length > 12) {
             cep.setAttribute('style', 'border:1px solid red');
             labelCep.setAttribute('style', 'color: red', );
             labelCep.innerHTML = 'Insira o cep corretamente'
+            valCep = false;
         } else {
             cep.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelCep.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelCep.innerHTML = 'CEP Ok!'
+            valCep = true;
         }
     })
     logradouro.addEventListener('keyup', function () {
@@ -110,10 +115,12 @@ console.log(telefone);
             logradouro.setAttribute('style', 'border:1px solid red');
             labelLogradouro.setAttribute('style', 'color: red', );
             labelLogradouro.innerHTML = 'Insira no minimo 4 caracteres'
+            valLogradouro = false;
         } else {
             logradouro.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelLogradouro.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelLogradouro.innerHTML = 'Logradouro Ok!'
+            valLogradouro = true;
         }
     })
     bairro.addEventListener('keyup', function () {
@@ -121,10 +128,12 @@ console.log(telefone);
             bairro.setAttribute('style', 'border:1px solid red');
             labelBairro.setAttribute('style', 'color: red', );
             labelBairro.innerHTML = 'Insira no minimo 4 caracteres'
+            valBairro = false;
         } else {
             bairro.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelBairro.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelBairro.innerHTML = 'Bairro Ok!'
+            valBairro = true;
         }
     })
     cidade.addEventListener('keyup', function () {
@@ -132,10 +141,12 @@ console.log(telefone);
             cidade.setAttribute('style', 'border:1px solid red');
             labelCidade.setAttribute('style', 'color: red', );
             labelCidade.innerHTML = 'Insira no minimo 4 caracteres'
+            valCidade = false;
         } else {
             cidade.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelCidade.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelCidade.innerHTML = 'Bairro Ok!'
+            valCidade = true;
         }
     })
     estado.addEventListener('keyup', function () {
@@ -143,9 +154,39 @@ console.log(telefone);
             estado.setAttribute('style', 'border:1px solid red');
             labelEstado.setAttribute('style', 'color: red', );
             labelEstado.innerHTML = 'Insira no minimo 4 caracteres'
+            valEstado = false;
         } else {
             estado.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelEstado.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelEstado.innerHTML = 'Bairro Ok!'
+            valEstado = true;
         }
     })
+    function enviar(){
+        if(valNome && valCpf && valTelefone && valEmail && valCep && valLogradouro && valBairro&& valCidade && valEstado){
+
+            let cadastros =JSON.parse(localStorage.getItem('cadastros') || '[]')
+
+            cadastros.push(
+                {
+                    name: nome.value,
+                    cpf: cpf.value,
+                    phone: telefone.value,
+                    email: email.value,
+                    cep: cep.value,
+                    place: logradouro.value,
+                    bairro: bairro.value,
+                    city: cidade.value,
+                    uf: estado.value
+                },
+            )
+
+            localStorage.setItem('cadastros', JSON.stringify(cadastros))
+
+            botaoSucesso.setAttribute('style', 'display: block')
+            botaoEnviar.setAttribute('style', 'display: None')
+        }else{
+            alert('Preencha Todos os Campos')
+        }
+
+    }

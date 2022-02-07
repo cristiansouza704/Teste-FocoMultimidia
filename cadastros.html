@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste FocoMultimidia</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="js/navbar.js">
 </head>
 <body>
     <nav id="navbar">
@@ -17,22 +16,21 @@
                 <li>Sobre</li>
                 <li>Contato</li>
             </ul>
-            
-            <!-- checkbox pra ativar a funionalidade do menu responsivo -->
-            <input type="checkbox" id="check"/>
-            <label for="check" id="btn-menu">
-                <i class="fas fa-bars 3x"></i>
-            </label>
-            
         </div>
     </nav>
     <header class="formulario">
+        
         <div class="form-container">
+            <div class="botoesposition">
+                <input onclick='criar()' class="botao" type="button" value="CRIAR"> 
+                <input onclick='listar()' class="botao" type="button" value="LISTAR"> 
+                <input onclick='excluir()' class="botao" type="button" value="EXCLUIR">
+            </div>
+                             
+                <h1 id="listarCadFor">listar Formularios</h1>
             <div class="form-itens">
-                    <php 
-                        
-                    ?>
-                </div>
+                
+            </div>
         </div>
     </header>
     <footer class="footer">
@@ -46,8 +44,8 @@
     
     
     
-    <!-- icones Awesome -->
-    <script src="https://kit.fontawesome.com/c4354d0f7e.js" crossorigin="anonymous"></script>
+    <!-- Validação -->
+    <script type="text/javascript"  src="js/validar.js"></script>
 
 </body>
 </html>

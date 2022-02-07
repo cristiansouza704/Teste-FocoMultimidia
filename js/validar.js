@@ -40,20 +40,20 @@ let botaoEnviar = document.querySelector(".botao")
 let botaoSucesso = document.querySelector(".botaosucesso")
 let botaoReenviar = document.querySelector(".botaoerro")
 
-console.log(telefone);
+// validação de todos os campos, utilizando evento keyup, para verificar se o campo está sendo preenchido corretamente 
 
     nome.addEventListener('keyup', function () {
         if (nome.value.length <= 5) {
             inputNome.setAttribute('style', 'border:1px solid red');
             labelNome.setAttribute('style', 'color: red', );
             labelNome.innerHTML = 'Insira No Minimo 5 Caracteres'
-            valNome = false;
+            valNome = false; //verificar se campo preenchido não esta
         
         } else {
             inputNome.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelNome.setAttribute('style', 'color: rgb(0, 255, 0);', );
             labelNome.innerHTML = 'Nome Ok!'
-            valNome = true;
+            valNome = true; //verificar se campo preenchido  esta preenchido
         }
     })
 
@@ -162,8 +162,14 @@ console.log(telefone);
             valEstado = true;
         }
     })
+
+    // botão com a função de enviar, ativando a verificação de campos, e o push no localStorage
+
     function enviar(){
+        // verificando se todos os campos foram preenchidos
         if(valNome && valCpf && valTelefone && valEmail && valCep && valLogradouro && valBairro&& valCidade && valEstado){
+
+            // push no local storage
 
             let cadastros =JSON.parse(localStorage.getItem('cadastros') || '[]')
 
@@ -183,10 +189,23 @@ console.log(telefone);
 
             localStorage.setItem('cadastros', JSON.stringify(cadastros))
 
+            
+
             botaoSucesso.setAttribute('style', 'display: block')
             botaoEnviar.setAttribute('style', 'display: None')
         }else{
             alert('Preencha Todos os Campos')
         }
+
+    }
+
+    // segunda pagina, criar, listar, excluir dados
+
+    // listar dados
+    function listar(){
+        let listarCadPag = document.querySelector("#listarCadFor");
+        let listarcad = localStorage.getItem('cadastros')
+
+        listarCadPag.innerHTML = listarcad
 
     }

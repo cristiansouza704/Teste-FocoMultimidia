@@ -7,76 +7,15 @@
     <title>Teste FocoMultimidia</title>
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
+
+    <!-- Validação Fomularios -->
     <script type="text/javascript" src="jquery/additional-methods.js"></script>
     <script type="text/javascript" src="jquery/jquery.validate.js"></script>
     <script src="jquery/localization/messages_pt_BR.min.js"></script>
-    
-    <script type="text/javascript">  
-        $(document).ready(function(){
-            $('#idForm').validate({
-                rules:{
-                    Nome:{
-                        required:true,
-                        minlength:5
-                        
-                    },
-                    cpf:{
-                        required:true,
-                        minlength:11,
-                        cpfbr:true,
-                        
-                    },
-                    telefone:{
-                        required:true,
-                        minlength:11
-                    },
-                    email:{
-                        required:true,
-                        email: true
-                    },
-                    cep:{
-                        required:true,
-                        minlength:8,
-                        postalcodeBR: true,
-                        
-                    },
-                    logradouro:{
-                        required:true,
-                        minlength:5
-                    },
-                    bairro:{
-                        required:true,
-                        minlength:4
-                    },
-                    cidade:{
-                        required:true,
-                        minlength:5
-                    },
-                    estado:{
-                        required:true,
-                        minlength:5
-                    },
-                },
-                message:{
-                    Nome:{
-                        required: "Este campo é obrigatorio",
-                        minlength:"Mininmo 5 Caracteres"
-                        
-                    },
-                    cpf:{
-                        required:"Este campo é obrigatorio",
-                        minlength:"Mininmo 11 Caracteres"
-                    }
-                },
-            
-            });
-         
-        });
+    <script src="jquery/validacao.js"></script>
 
-    </script>
-
-    <link rel="stylesheet" href="jquery/validar.js">
-
+    <!-- Preenchimento CEP com Viacep -->
+    <script type="text/javascript" src="js/cep.js"></script>
 
 </head>
 <body>
@@ -88,73 +27,57 @@
                 <li>Sobre</li>
                 <li>Contato</li>
             </ul>
-            
-            <!-- checkbox pra ativar a funionalidade do menu responsivo -->
-            <input type="checkbox" id="check"/>
-            <label for="check" id="btn-menu">
-                <i class="fas fa-bars 3x"></i>
-            </label>
-            
         </div>
     </nav>
     <header class="formulario" id="idFormulario">
         <div class="form-container">
-                <form method="get" class="form-item" id="idForm" >
+                <form method="POST" class="form-item" id="idForm" >
                     <fieldset >
                         <legend>Preencha com seus Dados</legend>
                             <br><br>
                             <div class="itens " >                               
                                 <input type="text" name="Nome" class="cNome succes " id="idNome" size="20" maxlength="30"> 
                                 <label id="lNome" for="idNome">Nome completo:</label> 
-                                <small id="smallNome">Erro</small>
                             </div>    
                             <br>                     
                             <div class="itens">
                                 <input type="number" name="cpf" id="idCpf" size="11" maxlength="11" >
                                 <label id="lCpf" for="idCpf">CPF</label>
-                                <small>Mensagem de Erro</small>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="tel" name="telefone" id="idTel" size="15" maxlength="15">  
                                 <label for="idTel">Telefone</label>
-                                <small>Erro</small>
                             </div> 
                             <br>
                             <div class="itens "> 
                                 <input type="email" name="email" id="idEmail">
                                 <label for="idEmail">Email</label>
-                                <small>Erro</small>
                             </div>
                             <br>
                             <div class="itens">
-                                <input type="number" name="cep" id="idCep">
+                                <input type="text" name="cep" id="cep" onblur="pesquisacep(this.value);">
                                 <label id="lCep" for="idCep">Cep </label>
-                                <small>Erro</small>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="text" name="logradouro" id="idLogradouro">
                                 <label for="idLogradouro">Logradouro </label>
-                                <small>Erro</small>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="text" name="bairro" id="idBairro">
                                 <label for="idBairro">Bairro</label>
-                                <small>Erro</small>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="text" name="cidade" id="idCidade">
                                 <label for="idCidade">Cidade </label>
-                                <small>Erro</small>
                             </div>
                             <br>
                             <div class="itens">
                                 <input type="text" name="estado" id="idEstado">
                                 <label for="idEstado">Estado</label>
-                                <small>Erro</small>
                             </div>
                             <br>
 

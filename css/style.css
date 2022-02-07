@@ -115,14 +115,9 @@ body{
         width: 100%;
         letter-spacing: 2px;
     }
-    .itens small {
-        visibility: hidden;
-        
-        margin-top: 5px;
-        font-size: 14px;
-    }
+    
     .form-item .botao {
-        background-color: #6C63FF;
+        background-color: #5b73a0;
         border-radius: 5px;
         color: #fff;
         padding: 15px;
@@ -134,32 +129,13 @@ body{
         margin-top: 5px;
         cursor: pointer;
         margin-bottom: 10px;
+        text-transform: uppercase;
     }
     
-    .form .botao:hover {
-        background-color: #584ff5;
+    .form-item .botao:hover {
+        background-color: #4d7dd8;
         transition: 0.3s;
     }
-
-    /* validação formularios */
-
-
-
-    .itens.success input{
-        border-bottom: 2px solid rgb(0, 255, 42);
-        border-right: 2px solid rgb(0, 255, 42);
-    }
-    .itens.error input{
-        border-bottom: 2px solid red;
-        border-right: 2px solid red;
-    }
-    .itens.error small{
-        color: red;
-        visibility: visible;
-    } 
-
-
-
     /* footer */
     .footer{
         position: absolute;

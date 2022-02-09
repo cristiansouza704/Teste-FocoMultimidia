@@ -145,7 +145,7 @@ let botaoReenviar = document.querySelector(".botaoerro")
         } else {
             cidade.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelCidade.setAttribute('style', 'color: rgb(0, 255, 0);', );
-            labelCidade.innerHTML = 'Bairro Ok!'
+            labelCidade.innerHTML = 'Cidade Ok!'
             valCidade = true;
         }
     })
@@ -158,7 +158,7 @@ let botaoReenviar = document.querySelector(".botaoerro")
         } else {
             estado.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
             labelEstado.setAttribute('style', 'color: rgb(0, 255, 0);', );
-            labelEstado.innerHTML = 'Bairro Ok!'
+            labelEstado.innerHTML = 'Estado Ok!'
             valEstado = true;
         }
     })

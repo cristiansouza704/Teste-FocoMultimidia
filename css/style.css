@@ -53,6 +53,15 @@ body{
 #navbar.active{
     left:0;
 }
+.btn-menu{
+    background-color: white;
+    border: #ffffff;
+}
+#navbar-container .icone{
+    display: none;
+    font-size:30px;
+    color:#5b73a0;
+}
 
 /* Formulario */
 
@@ -64,7 +73,7 @@ body{
         margin-bottom: 250px;
     }
     .form-container{
-        width: 50%;
+        width: 90%;
         margin: auto;
         height: calc(100vh - 30px) ;
         padding: 15px;
@@ -169,7 +178,7 @@ body{
     .footer{
         position: absolute;
         background: #111;
-        width: 100vw;
+        width: calc(100vw - 15px);
         height: 80px;
         padding-top: 40px;
         left: 0;
@@ -196,26 +205,34 @@ body{
 
 @media(max-width: 600px){
     #navbar{
-        height: 200px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        justify-content: flex-start;
+        transition: all .5s ;
     }
      #navbar-container{
-        margin-top: 20px;
         display: flex;
-        flex-direction: column;
-        
+        width: 80%;
+        align-items: flex-start;
+        margin-top: 20px;
      }
      #navbar-itens{
+        margin-top: 100px;
+        top:-220px;
+        position: absolute;
         display: flex;
         flex-direction: column;
-        padding: 0px;
-        transition: all 500ms ;
+        transition: all .5s ;
     }
     #navbar-itens li{
-        width: 100%;
+       margin-bottom: 10px;
+       display: flex;
+     }
+     #navbar-container .icone{
+        margin: 10px;
         display: flex;
-        justify-content: center;
-        padding: 10px;
-        border-bottom: 1px solid rgb(255, 255, 255);
      }
     
 }

@@ -47,7 +47,7 @@ let botaoReenviar = document.querySelector(".botaoerro")
             inputNome.setAttribute('style', 'border:1px solid red');
             labelNome.setAttribute('style', 'color: red', );
             labelNome.innerHTML = 'Insira No Minimo 5 Caracteres'
-            valNome = false; //verificar se campo preenchido não esta
+            valNome = false; //verificar se campo não esta preenchido 
         
         } else {
             inputNome.setAttribute('style', 'border:1px solid rgb(0, 255, 0);');
@@ -150,7 +150,7 @@ let botaoReenviar = document.querySelector(".botaoerro")
         }
     })
     estado.addEventListener('keyup', function () {
-        if (estado.value.length <= 4) {
+        if (estado.value.length <= 2) {
             estado.setAttribute('style', 'border:1px solid red');
             labelEstado.setAttribute('style', 'color: red', );
             labelEstado.innerHTML = 'Insira no minimo 4 caracteres'
